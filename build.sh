@@ -2052,12 +2052,12 @@ echo " "
 elif [ -n "${id_chat}" ] && [ -n "${id_topic}" ]; then
 curl -F "chat_id=${id_chat}" \
   -F "message_thread_id=${id_topic}" \
-  -F "text=ERROR KETIKA BUILDING ${Build_Status}_${Device_Name} HARAP PERIKSA KEMBALI DAN LIHAT LOG ERROR!" \
+  -F "text=ERROR BUILDING ${Build_Status}_${Device_Name} PLEASE CHECK ERROR ON TERMINAL!" \
  https://api.telegram.org/bot${Token}/sendMessage
 else
 
 echo " "
-curl -X POST "https://api.telegram.org/bot${Token}/sendMessage" -d "chat_id=${id_chat}&text= ERROR KETIKA BUILDING ${Build_Status}_${Device_Name} HARAP PERIKSA KEMBALI DAN LIHAT LOG ERROR!"
+curl -X POST "https://api.telegram.org/bot${Token}/sendMessage" -d "chat_id=${id_chat}&text= ERROR BUILDING ${Build_Status}_${Device_Name} PLEASE CHECK ERROR !"
 echo " "
 fi
 
@@ -2076,14 +2076,14 @@ echo " "
 else
 if [ "${Build_Target}" = "vendorboot" ]; then
 chmod a+x ${current_directory}/TWRP_${Device_Name}_vendor_boot.img.xz
-curl -X POST "https://api.telegram.org/bot${Token}/sendMessage" -d "chat_id=${id_chat}&text= NEW BUILD ${Build_Status}_${Device_Name}!"
+curl -X POST "https://api.telegram.org/bot${Token}/sendMessage" -d "chat_id=${id_chat}&text= BUILD SUCCESSFULLY SENDING FILE ${Build_Status}_${Device_Name}!"
 echo " "
 curl -F document=@"${current_directory}/TWRP_${Device_Name}_vendor_boot.img.xz" https://api.telegram.org/bot${Token}/sendDocument?chat_id=${id_chat}
 echo " "
 else
 chmod a+x ${current_directory}/TWRP_${Device_Name}_${Build_Target}.img.xz
 echo " "
-curl -X POST "https://api.telegram.org/bot${Token}/sendMessage" -d "chat_id=${id_chat}&text= NEW BUILD ${Build_Status}_${Device_Name}!"
+curl -X POST "https://api.telegram.org/bot${Token}/sendMessage" -d "chat_id=${id_chat}&text= BUILD SUCCESSFULLY SENDING FILE ${Build_Status}_${Device_Name}!"
 echo " "
 curl -F document=@"${current_directory}/TWRP_${Device_Name}_${Build_Target}.img.xz" https://api.telegram.org/bot${Token}/sendDocument?chat_id=${id_chat}
 echo " "
