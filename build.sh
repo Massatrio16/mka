@@ -79,7 +79,7 @@ echo " "
  echo " 11 "
  echo " 12.1 "
  echo " 14 "
- echo "Pilih Manifest branch (11 , 12,1) [wajib] : "
+ echo "Pilih Manifest branch (11 , 12,1, 14) [wajib] : "
 read Manifest_branch
 if [ -z "$Manifest_branch" ]; then
     echo "Input Manifest branch kosong!."
@@ -126,7 +126,7 @@ if [ -z "${Device_Name}" ]; then
     main
 fi
 echo " "
-echo " Run Lunch target Twrp (Isi nama lunch setelah twrp_ (contoh : x657b untuk twrp_x657b)"
+echo "Lunch target Twrp (twrp_xxxx) change xxxx with your file in device tree example : intput X657B for twrp_X657B"
 read Lunch
 if [ -z "${Lunch}" ]; then
     echo "Input Lunch Kosong!"
