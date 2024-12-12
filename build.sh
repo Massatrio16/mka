@@ -223,7 +223,7 @@ echo " "
   git config --global user.name "Nico170420"
   git config --global user.email "b170420nc@gmail.com"
         
-  repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-${Manifest_branch}
+  repo init -y --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-${Manifest_branch} 
         
   repo sync --force-sync
 
@@ -496,7 +496,7 @@ fi
    
    mkdir ${di_build}
    cd ${di_build}
-   repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-${Manifest_branch}
+   repo init -y --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-${Manifest_branch}
         
   repo sync --force-sync
   fi
@@ -654,7 +654,7 @@ fi
    
    mkdir ${di_build}
    cd ${di_build}
-   repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-${Manifest_branch}
+   repo init -y --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-${Manifest_branch}
         
   repo sync --force-sync
   fi
@@ -893,7 +893,7 @@ echo " "
         git config --global user.name "Nico170420"
         git config --global user.email "b170420nc@gmail.com"
         
-        repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-${Manifest_branch}
+        repo init -y --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-${Manifest_branch}
         
         repo sync --force-sync
         echo " "
